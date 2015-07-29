@@ -1,0 +1,6 @@
+suites:
+    main:
+        namespace: LaraPackage\RandomId
+        psr4_prefix: LaraPackage\RandomId
+        src_path: src
+        spec_prefix: spec

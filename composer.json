@@ -1,0 +1,16 @@
+{
+    "name": "larapackage/api",
+    "description": "A Laravel API Abstraction",
+    "require-dev": {
+        "phpspec/phpspec": "^2.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andy Wendt",
+            "email": "andy@awendt.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
