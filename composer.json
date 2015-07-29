@@ -1,6 +1,9 @@
 {
     "name": "larapackage/api",
     "description": "A Laravel API Abstraction",
+    "require": {
+       "Laravel/Framework": "~5.1"
+    },
     "require-dev": {
         "phpspec/phpspec": "^2.2"
     },
@@ -16,6 +19,5 @@
             "email": "andy@awendt.com"
         }
     ],
-    "minimum-stability": "stable",
-    "require": {}
+    "minimum-stability": "stable"
 }
