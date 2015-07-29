@@ -4,7 +4,8 @@
     "require": {
         "laravel/framework": "~5.1",
         "league/fractal": "0.12.*",
-        "prometheusapi/utilities": "~0.0.1"
+        "prometheusapi/utilities": "~0.0.1",
+        "larapackage/randomid": "~0.0.1"
     },
     "require-dev": {
         "phpspec/phpspec": "^2.2"
