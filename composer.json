@@ -4,6 +4,11 @@
     "require-dev": {
         "phpspec/phpspec": "^2.2"
     },
+    "autoload": {
+        "psr-4": {
+            "LaraPackage\\Api\\": "src/"
+        }
+    },
     "license": "MIT",
     "authors": [
         {
