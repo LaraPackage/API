@@ -2,7 +2,6 @@
 
 namespace spec\LaraPackage\Api\Config;
 
-use App\Contracts;
 use Closure;
 use Illuminate\Config;
 use PhpSpec\ObjectBehavior;
