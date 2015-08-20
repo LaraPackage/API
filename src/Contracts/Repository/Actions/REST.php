@@ -8,14 +8,14 @@ interface REST
     /**
      * Returns a cursorized collection
      *
-     * @param int  $currentPosition
-     * @param int  $pageSize
-     *
+     * @param int   $currentPosition
+     * @param int   $pageSize
+     * @param array $where
      * @param string|null $with
      *
      * @return \LaraPackage\Api\Contracts\Resource\Collection
      */
-    public function collection($currentPosition, $pageSize, $with = null);
+    public function collection($currentPosition, $pageSize, $where = [], $with = null);
 
     /**
      * Deletes records using the specified ids

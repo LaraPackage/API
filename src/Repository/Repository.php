@@ -50,15 +50,19 @@ abstract class Repository implements \LaraPackage\Api\Contracts\Repository\Repos
     /**
      * @inheritdoc
      */
-    public function collection($currentPosition, $pageSize, $with = null)
+    public function collection($currentPosition, $pageSize, $where = [], $with = null)
     {
-        $collection = $this->model->where('id', '>', $currentPosition);
+        $query = $this->model->where('id', '>', $currentPosition);
 
-        if ($with) {
-            $collection = $collection->with($with);
+        foreach ($where as $key => $value) {
+            $query->where($key, $value);
         }
 
-        $paginator = $collection->simplePaginate($pageSize);
+        if ($with) {
+            $query = $query->with($with);
+        }
+
+        $paginator = $query->simplePaginate($pageSize);
 
         return $this->cursor($paginator);
     }
