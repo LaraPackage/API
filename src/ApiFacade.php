@@ -304,7 +304,7 @@ class ApiFacade implements Contracts\ApiFacade
         // Other than production, debug information will be included with
         // the returned query if an exception is thrown and caught by the handler
         $appEnv = getenv('APP_ENV');
-        if (! $appEnv OR $appEnv === 'production') {
+        if ($appEnv AND $appEnv !== 'production') {
             $responseArray['debug'] = $this->debug($e);
         }
 
