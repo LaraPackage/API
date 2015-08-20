@@ -69,7 +69,8 @@ class AbstractRestController extends Controller
      */
     public function index()
     {
-        $cursor = $this->repository->collection($this->collectionHelper->currentPosition(), $this->collectionHelper->pageSize());
+        $cursor = $this->repository->collection($this->collectionHelper->currentPosition(), $this->collectionHelper->pageSize(),
+            $this->collectionHelper->query($this->transformer));
 
         return $this->api->collection($cursor, $this->transformer);
     }
