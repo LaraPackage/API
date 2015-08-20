@@ -150,4 +150,14 @@ class ApiVersion implements \LaraPackage\Api\Contracts\Config\ApiVersion
     {
         return $this->config->getIndex('version_designator').$version;
     }
+
+    /**
+     * @param $version
+     *
+     * @return \LaraPackage\Api\Contracts\Factory\VersionFactory
+     */
+    public function factory($version)
+    {
+        return $this->config->getIndexForVersion('factory', $version);
+    }
 }

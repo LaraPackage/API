@@ -2,7 +2,7 @@
 
 namespace spec\LaraPackage\Api\Config;
 
-use App\Contracts;
+use LaraPackage\Api\Factory\VersionFactory;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -108,6 +108,12 @@ class ApiVersionSpec extends ObjectBehavior
         $vendorString = 'vnd.wps_api.';
         $this->configGetApiVersionItemExpecation($config, 'vendor', $vendorString);
         $this->vendor($this->version)->shouldReturn($vendorString);
+    }
+
+    function it_returns_a_version_factory(\LaraPackage\Api\Contracts\Config\Api $config, \LaraPackage\Api\Contracts\Factory\VersionFactory $versionFactory)
+    {
+        $this->configGetApiVersionItemExpecation($config, 'factory', $versionFactory);
+        $this->factory($this->version)->shouldReturn($versionFactory);
     }
 
     function let(\LaraPackage\Api\Contracts\Config\Api $config)

@@ -97,4 +97,11 @@ interface ApiVersion
      * @return string
      */
     public function versionDesignator($version);
+
+    /**
+     * @param $version
+     *
+     * @return \LaraPackage\Api\Contracts\Factory\VersionFactory
+     */
+    public function factory($version);
 }
