@@ -2,6 +2,7 @@
 namespace LaraPackage\Api\Factory;
 
 use Illuminate\Contracts\Container\Container as App;
+use LaraPackage\Api\Contracts\Config\ApiVersion;
 
 class Factory implements \LaraPackage\Api\Contracts\Factory\Factory
 {
@@ -21,13 +22,19 @@ class Factory implements \LaraPackage\Api\Contracts\Factory\Factory
     protected $versionFactory;
 
     /**
+     * @var ApiVersion
+     */
+    private $apiVersion;
+
+    /**
      * @param App                                       $app
      * @param \LaraPackage\Api\Contracts\Request\Parser $requestParser
      */
-    public function __construct(App $app, \LaraPackage\Api\Contracts\Request\Parser $requestParser)
+    public function __construct(App $app, \LaraPackage\Api\Contracts\Request\Parser $requestParser, ApiVersion $apiVersion)
     {
         $this->app = $app;
         $this->requestParser = $requestParser;
+        $this->apiVersion = $apiVersion;
     }
 
     /**
@@ -64,22 +71,10 @@ class Factory implements \LaraPackage\Api\Contracts\Factory\Factory
     protected function createVersionFactory()
     {
         $version = $this->requestParser->version();
-        $factory = $this->versionFactoryName($version);
+        $factory = $this->apiVersion->factory($version);
         $instance = $this->app->make($factory);
         $this->app->instance(\LaraPackage\Api\Contracts\Factory\VersionFactory::class, $instance);
 
         return $instance;
-    }
-
-    /**
-     * @param int $version
-     *
-     * @return string
-     */
-    protected function versionFactoryName($version)
-    {
-        $factory = __NAMESPACE__.'\\'.'v'.$version.'\\'.'Factory';
-
-        return $factory;
     }
 }
