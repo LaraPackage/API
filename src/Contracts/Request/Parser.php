@@ -36,13 +36,13 @@ interface Parser
     public function includes();
 
     /**
-     * Get an item from the query
+     * Get an item from the query string or return the query as an array
      *
      * @param string $item
      *
      * @return string
      */
-    public function query($item);
+    public function query($item = null);
 
     /**
      * The request's content type

@@ -70,9 +70,9 @@ class Parser implements \LaraPackage\Api\Contracts\Request\Parser
     /**
      * @inheritdoc
      */
-    public function query($item)
+    public function query($item = null)
     {
-        return $this->request->query->get($item);
+        return $this->request->query($item);
     }
 
     /**

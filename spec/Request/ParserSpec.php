@@ -52,15 +52,23 @@ class ParserSpec extends ObjectBehavior
         $this->inIncludes($entity)->shouldReturn(true);
     }
 
-    function it_gets_an_item_from_the_query(Request $request, ParameterBag $parameterBag)
+    function it_gets_an_item_from_the_query(Request $request)
     {
         $item = 'foo';
         $return = 'bar';
 
-        $request->query = $parameterBag;
-        $parameterBag->get($item)->shouldBeCalled(1)->willReturn($return);
+        $request->query($item)->shouldBeCalled()->willReturn($return);
 
         $this->query($item)->shouldReturn($return);
+    }
+
+    function it_returns_the_query_as_an_array(Request $request)
+    {
+        $item = null;
+        $return = ['foo' => 'bar', 'baz' => 'boo'];
+        $request->query($item)->shouldBeCalled()->willReturn($return);
+
+        $this->query()->shouldReturn($return);
     }
 
     function it_gets_an_item_from_the_header(Request $request, HeaderBag $headerBag)
