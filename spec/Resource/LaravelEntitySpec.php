@@ -2,9 +2,6 @@
 
 namespace spec\LaraPackage\Api\Resource;
 
-use App\Contracts;
-use App\Contracts\Api;
-use App\Exceptions;
 use Illuminate\Database\Eloquent\Model;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -25,7 +22,7 @@ class LaravelEntitySpec extends ObjectBehavior
     function it_is_initializable(EntityModelStub $entityModelStub)
     {
         $this->beConstructedWith($entityModelStub);
-        $this->shouldHaveType('App\Resource\LaravelEntity');
+        $this->shouldHaveType('LaraPackage\Api\Resource\LaravelEntity');
     }
 }
 

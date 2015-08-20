@@ -61,7 +61,7 @@ class LaravelCollectionSpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('App\Resource\LaravelCollection');
+        $this->shouldHaveType('LaraPackage\Api\Resource\LaravelCollection');
     }
 
     function it_return_0_for_the_previous_if_current_minus_count_is_equal_or_less(Paginator $paginator, \LaraPackage\Api\Contracts\Config\Api $config, \LaraPackage\Api\Contracts\Request\Parser $requestParser)

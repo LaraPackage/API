@@ -69,7 +69,7 @@ class ApiVersionSpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('App\Config\ApiVersion');
+        $this->shouldHaveType('LaraPackage\Api\Config\ApiVersion');
     }
 
     function it_provides_the_version_designator(\LaraPackage\Api\Contracts\Config\Api $config)

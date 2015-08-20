@@ -33,7 +33,7 @@ class JsonSpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('App\v4\MediaType\Json');
+        $this->shouldHaveType('LaraPackage\Api\MediaType\Json');
     }
 }
 

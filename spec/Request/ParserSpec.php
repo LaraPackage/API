@@ -18,7 +18,7 @@ class ParserSpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('App\Request\Parser');
+        $this->shouldHaveType('LaraPackage\Api\Request\Parser');
     }
 
     function it_gets_the_version_from_the_accept_header(\LaraPackage\Api\Contracts\Request\AcceptHeader $acceptHeaderParser)

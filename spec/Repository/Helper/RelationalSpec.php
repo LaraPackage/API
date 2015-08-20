@@ -1,6 +1,6 @@
 <?php
 
-namespace spec\LaraPackage\Api\Repositories\Helper;
+namespace spec\LaraPackage\Api\Repository\Helper;
 
 use PrometheusApi\Utilities\Contracts\Uri\Parser;
 use LaraPackage\RandomId\TableHelper;
@@ -169,7 +169,7 @@ class RelationalSpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('App\Repositories\Helper\Relational');
+        $this->shouldHaveType('LaraPackage\Api\Repository\Helper\Relational');
     }
 
     function it_returns_an_item_column(

@@ -35,7 +35,7 @@ class ApiSpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('App\Config\Api');
+        $this->shouldHaveType('LaraPackage\Api\Config\Api');
     }
 
     function let(App $app)

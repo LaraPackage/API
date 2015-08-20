@@ -2,7 +2,6 @@
 
 namespace spec\LaraPackage\Api;
 
-use App\Contracts;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -12,7 +11,7 @@ class RepresentationCreatorSpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('App\v4\RepresentationCreator');
+        $this->shouldHaveType('LaraPackage\Api\RepresentationCreator');
     }
 
     function it_makes_a_response(

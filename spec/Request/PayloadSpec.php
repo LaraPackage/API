@@ -15,7 +15,7 @@ class PayloadSpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('App\Request\Payload');
+        $this->shouldHaveType('LaraPackage\Api\Request\Payload');
     }
 
     function it_retrieves_the_payload(Request $request)

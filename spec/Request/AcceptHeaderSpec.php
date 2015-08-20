@@ -2,7 +2,6 @@
 
 namespace spec\LaraPackage\Api\Request;
 
-use App\Contracts;
 use Illuminate\Http\Request;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -40,7 +39,7 @@ class AcceptHeaderSpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('App\Request\AcceptHeader');
+        $this->shouldHaveType('LaraPackage\Api\Request\AcceptHeader');
     }
 
     function it_returns_the_default_if_content_type_is_not_specified(Request $request, \LaraPackage\Api\Contracts\Config\ApiVersion $version)

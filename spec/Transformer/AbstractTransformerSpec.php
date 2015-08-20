@@ -40,7 +40,7 @@ class AbstractTransformerSpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('App\v4\Transformer\AbstractTransformer');
+        $this->shouldHaveType('LaraPackage\Api\Transformer\AbstractTransformer');
     }
 
     function it_transforms_an_associative_array_in_place_and_not_as_a_collection()
@@ -80,7 +80,7 @@ class AbstractTransformerSpec extends ObjectBehavior
 
     function let()
     {
-        $this->beAnInstanceOf('spec\LaraPackage\Api\v4\Transformer\AbstractTransformerStub');
+        $this->beAnInstanceOf('spec\LaraPackage\Api\Transformer\AbstractTransformerStub');
     }
 }
 

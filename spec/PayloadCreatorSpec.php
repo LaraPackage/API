@@ -76,7 +76,7 @@ class PayloadCreatorSpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('App\v4\PayloadCreator');
+        $this->shouldHaveType('LaraPackage\Api\PayloadCreator');
     }
 
     function it_returns_an_empty_collection_for_no_results(

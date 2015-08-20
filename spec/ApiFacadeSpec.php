@@ -2,7 +2,6 @@
 
 namespace spec\LaraPackage\Api;
 
-use App\Contracts;
 use LaraPackage\Api\Contracts\Entity\Transformer\ReverseTransformer;
 use LaraPackage\Api\Contracts\Entity\Transformer\Transformer;
 use LaraPackage\Api\Contracts\Factory\Factory;
