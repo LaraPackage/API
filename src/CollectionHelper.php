@@ -1,6 +1,8 @@
 <?php
 namespace LaraPackage\Api;
 
+use LaraPackage\Api\Contracts\Entity\Transformer\Transformer;
+
 class CollectionHelper implements \LaraPackage\Api\Contracts\CollectionHelper
 {
     /**
@@ -74,4 +76,14 @@ class CollectionHelper implements \LaraPackage\Api\Contracts\CollectionHelper
         return $this->version->collectionPageSize($this->requestParser->version());
     }
 
+
+    /**
+     * @inheritdoc
+     */
+    public function query(Transformer $transformer)
+    {
+        $queryArray = $this->requestParser->query();
+
+        return $transformer->reverseTransform($queryArray);
+    }
 }

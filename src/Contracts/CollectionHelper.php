@@ -1,6 +1,8 @@
 <?php
 namespace LaraPackage\Api\Contracts;
 
+use LaraPackage\Api\Contracts\Entity\Transformer\Transformer;
+
 interface CollectionHelper
 {
     /**
@@ -34,4 +36,11 @@ interface CollectionHelper
      * @return int
      */
     public function pageSize();
+
+    /**
+     * @param Transformer $transformer
+     *
+     * @return array
+     */
+    public function query(Transformer $transformer);
 }
