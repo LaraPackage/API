@@ -8,8 +8,8 @@ return [
 
     'version_designator' => 'v',
     'versions'           => [
-        4 => [
-            'vendor'         => 'vnd.wps_api.',
+        1 => [
+            'vendor'         => 'vnd.your_api.',
             'media'          => [
                 'types'   => ['json'],
                 'default' => 'json',
@@ -18,11 +18,13 @@ return [
                 'page_size'        => 10,
                 'current_position' => 'current',
             ],
+            // This is typically used for testing for getting ids for routes that are non-standard.
             'resourceIdsMap' => [
-                '/catalogs/{random_id}/catalogtabs' => function () {
-                    return (new\LaraPackage\RandomId\TableFetcher)->getRandomColumnEntries('catalogtabs', ['catalog_id']);
+                '/your/{random_id}/route' => function () {
+                    return (new \LaraPackage\RandomId\TableFetcher)->getRandomColumnEntries('table', ['column_id']);
                 },
             ],
+            'factory'        => \LaraPackage\Api\Factory\VersionFactory::class,
         ],
     ],
 ];
