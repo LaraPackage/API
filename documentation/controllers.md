@@ -2,6 +2,8 @@
 
 Extending  `\LaraPackage\Api\Http\Controllers\AbstractRestController` provides GET, POST, PUT, PATCH, DELETE routes out of the box.
 
+You need to use the repository and transformer for the controller.
+
 Example usage: 
 
 ```php
@@ -11,7 +13,7 @@ use App\v1\Transformer;
 use LaraPackage\Api\CollectionHelper;
 use LaraPackage\Api\Http\Controllers\AbstractRestController;
 
-class AttributekeysController extends AbstractRestController
+class YourController extends AbstractRestController
 {
 
     /**
