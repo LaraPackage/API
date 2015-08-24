@@ -17,7 +17,7 @@ abstract class Repository implements \LaraPackage\Api\Contracts\Repository\Repos
 {
 
     /**
-     * @var AbstractModel
+     * @var AbstractModel|\LaraPackage\Api\Contracts\Validation\Entity|\LaraPackage\Api\Contracts\Validation\Relation
      */
     protected $model;
 
