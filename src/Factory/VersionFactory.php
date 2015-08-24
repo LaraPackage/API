@@ -22,7 +22,7 @@ class VersionFactory implements \LaraPackage\Api\Contracts\Factory\VersionFactor
      */
     public function getRequestPayload()
     {
-        return $this->app->make(\LaraPackage\Api\Request\Payload::class);
+        return $this->app->make(\LaraPackage\Api\Contracts\Request\Payload::class);
     }
 
     /**
@@ -40,7 +40,7 @@ class VersionFactory implements \LaraPackage\Api\Contracts\Factory\VersionFactor
      */
     public function makePayloadCreator()
     {
-        return $this->app->make(\LaraPackage\Api\PayloadCreator::class);
+        return $this->app->make(\LaraPackage\Api\Contracts\PayloadCreator::class);
     }
 
     /**
@@ -48,6 +48,6 @@ class VersionFactory implements \LaraPackage\Api\Contracts\Factory\VersionFactor
      */
     public function makeRepresentationCreator()
     {
-        return $this->app->make(\LaraPackage\Api\RepresentationCreator::class);
+        return $this->app->make(\LaraPackage\Api\Contracts\RepresentationCreator::class);
     }
 }
