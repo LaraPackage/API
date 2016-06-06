@@ -27,7 +27,7 @@ class ApiExceptionHandler implements Contracts\Exceptions\ApiExceptionHandler
     }
 
 
-    public function handle(\Exception $exception)
+    public function handle(\Exception $e)
     {
         if ($this->exceptionIs(NotFoundHttpException::class, $e)) {
             return $this->apiFacade->notFound($e);
