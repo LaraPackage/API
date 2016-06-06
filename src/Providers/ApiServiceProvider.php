@@ -34,6 +34,8 @@ class ApiServiceProvider extends \Illuminate\Support\ServiceProvider
         $this->app->singleton(\LaraPackage\RandomId\Contracts\Retriever::class, \LaraPackage\RandomId\Retriever::class);
         $this->app->singleton(\LaraPackage\Api\Contracts\Repository\Helper\Relational::class, \LaraPackage\Api\Repository\Helper\Relational::class);
 
+        $this->app->singleton(\LaraPackage\Api\Contracts\Exceptions\ApiExceptionHandler::class, \LaraPackage\Api\Repository\Helper\Relational::class);
+        
         $this->app->bind(\LaraPackage\Api\Contracts\Resource\Collection::class, function ($app, $params) {
             $paginator = $params[0];
 

@@ -1,5 +1,5 @@
 <?php
-namespace LaraPackage\Api\Contracts;
+namespace LaraPackage\Api\Contracts\Exceptions;
 
 interface ApiExceptionHandler
 {

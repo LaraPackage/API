@@ -14,7 +14,7 @@ use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 
-class ApiExceptionHandler implements Contracts\ApiExceptionHandler
+class ApiExceptionHandler implements Contracts\Exceptions\ApiExceptionHandler
 {
     /**
      * @var ApiFacade
@@ -66,7 +66,7 @@ class ApiExceptionHandler implements Contracts\ApiExceptionHandler
         }
 
         if ($this->exceptionIs(\RuntimeException::class, $e)) {
-            return $this->apiFacade($e)->internalError($e);
+            return $this->apiFacade->internalError($e);
         }
 
         if ($this->exceptionIs(TeapotException::class, $e)) {
