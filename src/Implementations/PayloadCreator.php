@@ -1,9 +1,7 @@
 <?php
 namespace LaraPackage\Api\Implementations;
 
-use InvalidArgumentException;
-use LaraPackage\Api\Contracts\Factory\VersionFactory;
-use LaraPackage\Api\Contracts\Request\Parser;
+use LaraPackage\Api\Exceptions\InvalidArgumentException;
 use LaraPackage\Api\FractalFactory;
 use League\Fractal;
 
@@ -17,7 +15,7 @@ class PayloadCreator implements \LaraPackage\Api\Contracts\PayloadCreator
     protected $payload;
 
     /**
-     * @var Parser
+     * @var \LaraPackage\Api\Contracts\Request\Parser
      */
     protected $requestParser;
 
@@ -25,13 +23,12 @@ class PayloadCreator implements \LaraPackage\Api\Contracts\PayloadCreator
      * @var FractalFactory
      */
     protected $fractalFactory;
-    
     /**
-     * @var VersionFactory
+     * @var \LaraPackage\Api\Contracts\Factory\VersionFactory
      */
     private $versionFactory;
 
-    public function __construct(\LaraPackage\Api\Contracts\Request\Parser $requestParser, FractalFactory $fractalFactory, VersionFactory $versionFactory)
+    public function __construct(\LaraPackage\Api\Contracts\Request\Parser $requestParser, FractalFactory $fractalFactory, \LaraPackage\Api\Contracts\Factory\VersionFactory $versionFactory)
     {
         $this->requestParser = $requestParser;
         $this->fractalFactory = $fractalFactory;

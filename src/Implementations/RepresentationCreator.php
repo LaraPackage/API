@@ -20,7 +20,7 @@ class RepresentationCreator implements \LaraPackage\Api\Contracts\Representation
     /**
      * @var int
      */
-    private $version = 4;
+    private $version = 1;
     /**
      * @var \LaraPackage\Api\Contracts\Config\ApiVersion
      */
@@ -31,7 +31,8 @@ class RepresentationCreator implements \LaraPackage\Api\Contracts\Representation
         ResponseFactory $response,
         \LaraPackage\Api\Contracts\Factory\VersionFactory $versionFactory,
         \LaraPackage\Api\Contracts\Config\ApiVersion $versionInfoRetriever
-    ) {
+    )
+    {
         $this->requestParser = $requestParser;
         $this->response = $response;
         $this->versionFactory = $versionFactory;

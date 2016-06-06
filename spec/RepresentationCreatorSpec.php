@@ -11,7 +11,7 @@ class RepresentationCreatorSpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('LaraPackage\Api\RepresentationCreator');
+        $this->shouldHaveType('LaraPackage\Api\Implementations\RepresentationCreator');
     }
 
     function it_makes_a_response(
