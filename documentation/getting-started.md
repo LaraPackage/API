@@ -7,3 +7,5 @@
 2. Publish the config: `php artisan vendor:publish`
     
     - Change the config definitions to your needs.
+
+3. Use versioning in `app/Http/routes.php` file
