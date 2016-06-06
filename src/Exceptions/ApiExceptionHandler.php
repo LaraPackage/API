@@ -75,4 +75,15 @@ class ApiExceptionHandler implements Contracts\ApiExceptionHandler
 
         return $this->apiFacade->internalError($e, 'Unknown error');
     }
+
+    /**
+     * @param $exceptionType
+     * @param $e
+     *
+     * @return bool
+     */
+    private function exceptionIs($exceptionType, $e)
+    {
+        return is_a($e, $exceptionType);
+    }
 }
