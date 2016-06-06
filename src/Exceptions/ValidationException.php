@@ -3,7 +3,7 @@ namespace LaraPackage\Api\Exceptions;
 
 use Exception;
 
-class ValidationException extends Exception
+class ValidationException extends \Illuminate\Contracts\Validation\ValidationException
 {
     /**
      * @var array
