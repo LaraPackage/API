@@ -30,47 +30,47 @@ class ApiExceptionHandler implements Contracts\Exceptions\ApiExceptionHandler
     public function handle(\Exception $e)
     {
         if ($this->exceptionIs(NotFoundHttpException::class, $e)) {
-            return $this->apiFacade->notFound($e);
+            return $this->apiFacade->notFound($e, $e->getMessage());
         }
 
         if ($this->exceptionIs(MethodNotAllowedHttpException::class, $e)) {
-            return $this->apiFacade->methodNotAllowed($e);
+            return $this->apiFacade->methodNotAllowed($e, $e->getMessage());
         }
 
         if ($this->exceptionIs(BadRequestHttpException::class, $e)) {
-            return $this->apiFacade->badRequest($e);
+            return $this->apiFacade->badRequest($e, $e->getMessage());
         }
 
         if ($this->exceptionIs(UnauthorizedHttpException::class, $e)) {
-            return $this->apiFacade->unauthorized($e);
+            return $this->apiFacade->unauthorized($e, $e->getMessage());
         }
 
         if ($this->exceptionIs(ConflictHttpException::class, $e)) {
-            return $this->apiFacade->conflict($e);
+            return $this->apiFacade->conflict($e, $e->getMessage());
         }
 
         if ($this->exceptionIs(QueryException::class, $e)) {
-            return $this->apiFacade->internalError($e);
+            return $this->apiFacade->internalError($e, $e->getMessage());
         }
 
         if ($this->exceptionIs(ErrorException::class, $e)) {
-            return $this->apiFacade->internalError($e);
+            return $this->apiFacade->internalError($e, $e->getMessage());
         }
 
         if ($this->exceptionIs(ValidationException::class, $e)) {
-            return $this->apiFacade->validationError($e);
+            return $this->apiFacade->validationError($e, $e->getMessage());
         }
 
         if ($this->exceptionIs(BindingResolutionException::class, $e)) {
-            return $this->apiFacade->internalError($e);
+            return $this->apiFacade->internalError($e, $e->getMessage());
         }
 
         if ($this->exceptionIs(\RuntimeException::class, $e)) {
-            return $this->apiFacade->internalError($e);
+            return $this->apiFacade->internalError($e, $e->getMessage());
         }
 
         if ($this->exceptionIs(TeapotException::class, $e)) {
-            return $this->apiFacade->iAmATeapot($e);
+            return $this->apiFacade->iAmATeapot($e, $e->getMessage());
         }
 
         return $this->apiFacade->internalError($e, 'Unknown error');
