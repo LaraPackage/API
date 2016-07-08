@@ -13,6 +13,7 @@ use Symfony\Component\HttpKernel\Exception\ConflictHttpException;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
+use LaraPackage\Api\Contracts as Contracts;
 
 class ApiExceptionHandler implements Contracts\Exceptions\ApiExceptionHandler
 {
