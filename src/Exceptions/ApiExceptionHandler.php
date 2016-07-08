@@ -1,5 +1,5 @@
 <?php
-namespace LaraPackage\Api;
+namespace LaraPackage\Api\Exceptions;
 
 
 use ErrorException;
