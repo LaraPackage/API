@@ -34,7 +34,7 @@ class ApiServiceProvider extends \Illuminate\Support\ServiceProvider
         $this->app->singleton(\LaraPackage\RandomId\Contracts\Retriever::class, \LaraPackage\RandomId\Retriever::class);
         $this->app->singleton(\LaraPackage\Api\Contracts\Repository\Helper\Relational::class, \LaraPackage\Api\Repository\Helper\Relational::class);
 
-        $this->app->singleton(\LaraPackage\Api\Contracts\Exceptions\ApiExceptionHandler::class, \LaraPackage\Api\ApiExceptionHandler::class);
+        $this->app->singleton(\LaraPackage\Api\Contracts\Exceptions\ApiExceptionHandler::class, \LaraPackage\Api\Exceptions\ApiExceptionHandler::class);
 
         $this->app->singleton(\LaraPackage\Api\Contracts\PayloadCreator::class, \LaraPackage\Api\Implementations\PayloadCreator::class);
         $this->app->singleton(\LaraPackage\Api\Contracts\RepresentationCreator::class, \LaraPackage\Api\Implementations\RepresentationCreator::class);
